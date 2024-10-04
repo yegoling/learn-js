@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function func() {
+            // 注意加.value
+            var x = document.forms["myform"]["text"].value;
+            if (x == null || x == "") {
+                alert("请输入名字");
+                return false;
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <!-- form中的内容是要提交出去的，action指定提交位置（页面或后台），method指明获取还是传递内容 -->
+    <form action="#" name="myform" onsubmit="return func()" method="post">
+        名字：
+        <!-- <input type="text" name="text" required="required"> -->
+        <input type="text" name="text" >
+        <input type="submit" value="提交">
+        <!-- <button type="button" onclick="func()">提交</button> -->
+    </form>
+</body>
+
+</html>
